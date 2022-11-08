@@ -1,0 +1,43 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Liste de publications</h4>
+                        <input  matInput placeholder="recherche" [(ngModel)]="recherche">
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>Titre</th>
+                                    <th>Auteur</th>
+                                    <th>Description</th>
+                                    <th>Catégorie</th>
+                                    <th>Date</th>
+                                    <th>Edit</th>
+                                    <th>Supp</th>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let p of publicationsToFilter ;let i=index">
+                                      <td>{{p.titre}}</td>
+                                      <td>{{p.author}}</td>
+                                      <td>{{p.description}}</td>
+                                      <td>{{p.categorie}}</td>
+                                      <td>{{p.date}}</td>
+                                      <td><button mat-button type="button" [routerLink]="['/update-post',i]">Edit</button></td>
+                                      <td><button mat-button type="button" 
+                                        
+                                        >Supprimer</button></td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
